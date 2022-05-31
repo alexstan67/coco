@@ -1,7 +1,10 @@
 <h1>Lessons</h1>
 
-<ul>
 <% @lessons.each do |lesson| %>
-  <li><%= lesson.coding_language %></li>
+  <div class="card">
+    <h2><%= lesson.user.first_name %> </h2>
+    <p><%= lesson.coding_language %></p>
+    <p><%= lesson.description %></p>
+    <%= cl_image_tag(lesson.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-large") %>
+  </div>
 <% end %>
-</ul>

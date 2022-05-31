@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "background.jpg" %>);">
+  <div class="container d-flex flex-column justify-content-between">
+    <div>
+      <h1>Book a coach to help you learn to code!</h1>
+      <p>Change your life and learn to code at one of our campuses around the world.</p>
+    </div>
+    <%= link_to "Look for your coach", lessons_path %>
+    <ul class="list-inline">
+      <li><%= image_tag "ruby.png", class: "card-language" %></li>
+      <li><%= image_tag "javascript.png", class: "card-language" %></li>
+      <li><%= image_tag "python.png", class: "card-language" %></li>
+      <li><%= image_tag "css.png", class: "card-language" %></li>
+      <li><%= image_tag "html.png", class: "card-language" %></li>
+      <li><%= image_tag "sql.png", class: "card-language" %></li>
+    </ul>
+  </div>
+</div>

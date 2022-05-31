@@ -18,7 +18,9 @@ User.destroy_all
 puts "Creating users, lessons"
 
 5.times do
+  file = File.open(Rails.root.join("app/assets/images/image.png"))
   user = User.new
+  user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   user.email = Faker::Internet.email
   user.password = "123123"
   user.first_name = Faker::Name.first_name
