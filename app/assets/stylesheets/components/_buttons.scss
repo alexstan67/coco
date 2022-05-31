@@ -64,3 +64,18 @@
 .btn-info:hover {
   background-color: #31d2f2;
 }
+
+.btn-rounded {
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: background 0.3s ease;
+  margin-right: 10px;
+  background-color: #FFD24C;
+  color: black;
+}
