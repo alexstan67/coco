@@ -3,6 +3,13 @@ class BookingsController < ApplicationController
     Booking.create(booking_params)
   end
 
+  def index
+    # return a collection with all bookings
+    @bookings = current_user.bookings
+    console
+    # return the first booking
+  end
+
   private
 
   def booking_params
