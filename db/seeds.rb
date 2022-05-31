@@ -30,7 +30,7 @@ puts "Creating users, lessons"
     lesson = Lesson.new
     lesson.user_id = user.id
     lesson.hourly_prices = 100 + rand(20)
-    lesson.coding_language = ["ruby", "c", "php", "javascript", "Ruby on Rails"].sample(1)
+    lesson.coding_language = ["ruby", "c", "php", "javascript", "Ruby on Rails"].sample
     lesson.description = Faker::Lorem.paragraph(sentence_count: 3)
     lesson.save
     6.times do
