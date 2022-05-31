@@ -1,10 +1,21 @@
 <h1>Lessons</h1>
 
 <% @lessons.each do |lesson| %>
-  <div class="card">
-    <h2><%= lesson.user.first_name %> </h2>
-    <p><%= lesson.coding_language %></p>
-    <p><%= lesson.description %></p>
-    <%= cl_image_tag(lesson.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-large") %>
+  <div class="card-container">
+    <div class="cc-left">
+      <!--<%= cl_image_tag(lesson.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-large") %> -->
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", width: 56, height: 56, class: "avatar-large" %>
+      <p>★★★★★</p>
+      <p><%= lesson.coding_language %></p>
+      <% if lesson.coding_language == "php" %>
+      <%= image_tag "css.png" %>
+      <% end %>
+      <%= link_to "Book", "#", class: "btn btn-primary" %>
+    </div>
+    <div class="cc-right">
+      <h2><%= lesson.user.first_name %> </h2>
+      <p><%= lesson.description %></p>
+      <p><%= lesson.hourly_prices %> EUR / h</p>
+    </div>
   </div>
 <% end %>
