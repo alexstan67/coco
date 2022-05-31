@@ -1,9 +1,13 @@
 .banner {
   background-size: cover;
   background-position: center;
-  text-align: center;
   height: 100vh;
-  padding-top: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .banner h1 {
