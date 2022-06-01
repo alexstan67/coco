@@ -12,7 +12,8 @@
 }
 
 .btn-primary {
-  background-color: #0d6efd;
+  //background-color: #0d6efd;
+  background-color: $primary !important;
   color: #fdfeff;
 }
 
@@ -30,7 +31,8 @@
 }
 
 .btn-secondary {
-  background-color: #6c757d;
+  //background-color: #6c757d;
+  background-color: $secondary !important;
   color: #fdfeff;
 }
 
