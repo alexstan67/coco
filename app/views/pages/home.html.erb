@@ -1,17 +1,17 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "background.jpg" %>);">
-  <div class="container d-flex flex-column justify-content-between">
+  <div class="container">
     <div>
-      <h1>Book a coach to help you learn to code!</h1>
-      <p>Change your life and learn to code at one of our campuses around the world.</p>
+      <h1>Find your <strong>Co</strong>ading <strong>Co</strong>ach</h1>
+      <p>Book a coach to help you learn to code!</p>
     </div>
-    <%= link_to "Look for your coach", lessons_path, class: "btn-rounded" %>
-    <ul class="list-inline">
-      <li><%= image_tag "ruby.png", class: "card-language" %></li>
-      <li><%= image_tag "javascript.png", class: "card-language" %></li>
-      <li><%= image_tag "python.png", class: "card-language" %></li>
-      <li><%= image_tag "css.png", class: "card-language" %></li>
-      <li><%= image_tag "html.png", class: "card-language" %></li>
-      <li><%= image_tag "sql.png", class: "card-language" %></li>
-    </ul>
+    <%= link_to "Look for your coach", lessons_path, class:"btn-rounded" %>
+  </div>
+  <div class="cards-language">
+    <%= link_to lessons_path(code_language: "ruby") do %><%= image_tag "ruby.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "javascript") do %><%= image_tag "javascript.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "python") do %><%= image_tag "python.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "css") do %><%= image_tag "css.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "html") do %><%= image_tag "html.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "sql") do %><%= image_tag "sql.png", class: "card-language" %><% end %>
   </div>
 </div>

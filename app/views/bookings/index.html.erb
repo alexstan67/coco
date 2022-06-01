@@ -1,3 +1,4 @@
+<div class="container">
 <div class="container-bookings">
   <div>
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", width: 56, height: 56, class: "avatar-large" %>
@@ -13,7 +14,7 @@
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", width: 56, height: 56, class: "avatar-large" %>
             </div>
             <div class="box-center">
-              <h2><p><%= booking.user.first_name %></p></h2>
+              <p><%= booking.user.first_name %></p>
               <p><%= booking.lesson.coding_language %></p>
             </div>
           </div>
@@ -26,6 +27,12 @@
       <% end %>
     </div>
 
-    <div class="student-info" style="width: 300px;"></div>
+    <div class="student-info" style="width: 300px;">
+      <h2>Student Info</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+
   </div>
  </div>
+</div>

@@ -1,12 +1,37 @@
-.card-container
-{
+.main-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+}
+
+.second-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.third-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  // position: sticky;
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.card-container {
   display: flex;
   padding: 15px;
   background-color: #D7E4F9;
   height: 250px;
-  width: 700px;
-  margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 20px;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .cc-left {
   display: flex;
@@ -20,13 +45,22 @@
   flex-direction: column;
   padding: 15px;
   align-items: center;
-  width: 600px;
+  width: 100%;
+}
+
+.container-bookings {
+
 }
 
 .box-container {
   display: flex;
   justify-content: space-between;
 }
+
+.bookings-card {
+  background: #D7E4F9;
+}
+
 .box
 {
   display: flex;
@@ -50,10 +84,16 @@
 }
 
 .box-right {
-  background-color: #F6FAFF;
+  background-color: #D7E4F9;
   // float: right;
   flex-direction: column;
   padding: 15px;
   align-items: center;
   // width: 600px;
+}
+
+.student-info {
+  background-color: #BCBCBC ;
+  height: 100px;
+  width: 400px;
 }

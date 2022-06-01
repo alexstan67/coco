@@ -1,15 +1,23 @@
 // Specific CSS for your home-page
-.list-inline {
-  list-style: none;
-
-  li {
-    display: inline;
-  }
+.cards-language {
+  position: absolute;
+  bottom: 5vh;
+  margin-top: 40vh;
+  padding: 0 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .card-language {
-  height: 45px;
-  width: 45px;
+  margin: 0 24px;
+  height: 48px;
+  width: 48px;
   // border-radius: 50%;
   object-fit: cover;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.15);
+  }
 }
