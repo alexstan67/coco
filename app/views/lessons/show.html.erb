@@ -1,9 +1,8 @@
-<h1>Lesson show</h1>
 <div class="container-main">
-  <div class="card-container">
+  <div class="card-container2">
     <div class="container-up">
       <div class="container-up-left">
-            <!--<%= cl_image_tag(@lesson.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-large") %> -->
+            <%= cl_image_tag(@lesson.user.photo.key, height: 75, width: 75, crop: :fill, class: "avatar-large") %>
       </div>
       <div class="container-up-right">
         <h1><%= @lesson.coding_language %></h1>
@@ -11,10 +10,16 @@
     </div>
     <div class="container-down">
       <p><%= @lesson.description %></p>
-      <p><%= @lesson.hourly_prices %> EUR / h</p>
+      <p><b><%= @lesson.hourly_prices %> EUR / h</b></p>
     </div>
   </div>
   <div class="form-container">
-
+    <!-- app/views/reviews/new.html.erb -->
+      <%= simple_form_for [ @lesson, @booking ] do |f| %>
+      <%= f.input :teaching_date, as: :date, html5: true %>
+      <%= f.input :duration_min %>
+      <%= f.input :comment %>
+      <%= f.submit "Book", class: "btn btn-primary" %>
+  <% end %>
   </div>
 </div>
