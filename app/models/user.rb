@@ -4,7 +4,9 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :lessons
   has_many :bookings
+  has_many :teacher_bookings, through: :lessons, source: :bookings
   has_many :reviews
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :first_name, :last_name, :phone, :address, presence: true
