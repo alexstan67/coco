@@ -1,0 +1,20 @@
+<h1>Lesson show</h1>
+<div class="container-main">
+  <div class="card-container">
+    <div class="container-up">
+      <div class="container-up-left">
+            <!--<%= cl_image_tag(@lesson.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-large") %> -->
+      </div>
+      <div class="container-up-right">
+        <h1><%= @lesson.coding_language %></h1>
+      </div>
+    </div>
+    <div class="container-down">
+      <p><%= @lesson.description %></p>
+      <p><%= @lesson.hourly_prices %> EUR / h</p>
+    </div>
+  </div>
+  <div class="form-container">
+
+  </div>
+</div>
