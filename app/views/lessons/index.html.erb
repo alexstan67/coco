@@ -4,7 +4,7 @@
     <% @lessons.each do |lesson| %>
         <div class="card-container">
           <div class="cc-left">
-            <!--<%= cl_image_tag(lesson.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-large") %> -->
+            <%#= cl_image_tag(lesson.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-large") %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", width: 56, height: 56, class: "avatar-large" %>
             <p>★★★★★</p>
             <p><%= lesson.coding_language %></p>

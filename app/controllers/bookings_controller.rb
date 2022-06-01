@@ -5,7 +5,9 @@ class BookingsController < ApplicationController
 
   def index
     # return a collection with all bookings
-    @bookings = current_user.bookings
+    @bookings = current_user.teacher_bookings
+
+
   end
 
   private
