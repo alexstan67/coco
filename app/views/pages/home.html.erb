@@ -7,11 +7,11 @@
     <%= link_to "Look for your coach", lessons_path, class:"btn btn-warning btn-lg" %>
   </div>
   <div class="cards-language">
-    <%= image_tag "ruby.png", class: "card-language" %>
-    <%= image_tag "javascript.png", class: "card-language" %>
-    <%= image_tag "python.png", class: "card-language" %>
-    <%= image_tag "css.png", class: "card-language" %>
-    <%= image_tag "html.png", class: "card-language" %>
-    <%= image_tag "sql.png", class: "card-language" %>
+    <%= link_to lessons_path(code_language: "ruby") do %><%= image_tag "ruby.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "javascript") do %><%= image_tag "javascript.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "python") do %><%= image_tag "python.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "css") do %><%= image_tag "css.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "html") do %><%= image_tag "html.png", class: "card-language" %><% end %>
+    <%= link_to lessons_path(code_language: "sql") do %><%= image_tag "sql.png", class: "card-language" %><% end %>
   </div>
 </div>

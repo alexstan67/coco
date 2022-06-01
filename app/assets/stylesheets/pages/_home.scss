@@ -10,9 +10,14 @@
 }
 
 .card-language {
-  margin: 0 16px;
-  height: 45px;
-  width: 45px;
+  margin: 0 24px;
+  height: 48px;
+  width: 48px;
   // border-radius: 50%;
   object-fit: cover;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.15);
+  }
 }
