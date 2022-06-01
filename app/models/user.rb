@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :reviews
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   validates :first_name, :last_name, :phone, :address, presence: true
 end
