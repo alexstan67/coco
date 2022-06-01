@@ -6,8 +6,6 @@ class BookingsController < ApplicationController
   def index
     # return a collection with all bookings
     @bookings = current_user.bookings
-    console
-    # return the first booking
   end
 
   private

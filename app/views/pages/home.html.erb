@@ -1,10 +1,10 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "background.jpg" %>);">
   <div class="container">
     <div>
-      <h1>Book a coach to help you learn to code!</h1>
-      <p>Change your life and learn to code at one of our campuses around the world.</p>
+      <h1>Find your <strong>Co</strong>ading <strong>Co</strong>ach</h1>
+      <p>Book a coach to help you learn to code!</p>
     </div>
-    <%= link_to "Look for your coach", lessons_path, class:"btn btn-warning btn-lg" %>
+    <%= link_to "Look for your coach", lessons_path, class:"btn-rounded" %>
   </div>
   <div class="cards-language">
     <%= link_to lessons_path(code_language: "ruby") do %><%= image_tag "ruby.png", class: "card-language" %><% end %>
