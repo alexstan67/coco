@@ -10,7 +10,6 @@ require 'date'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 description = ["is a computer science educator with three years of experience teaching middle school students everything from coding with Scratch and Python to creating 3D models online.", "is an undergraduate student at Johns Hopkins University studying Computer Science and Public Health. She volunteers as a tutor for high school students with intellectual disabilities and is on a team that holds sustainability hackathons. Julia hopes to show her students how fun and rewarding coding can be. Her own coding journey began with a class in high school, which has since launched her continued quest to learn and master programming languages.", "recently graduated from the University of Vermont with a B.S. in computer science. Her love for teaching began when she helped to teach swimming lessons at 10 years old. Ever since then she has wanted to be a teacher. She loves to show her students the limitless possibilities they can create with coding and loves to encourage creativity in every lesson."]
-address = ["Canggu, Bali", "Kuta, Bali", "Ubud, Bali"]
 
 puts "Cleaning the database..."
 Review.destroy_all
@@ -29,7 +28,7 @@ puts "Creating users, lessons"
   user.password = "123123"
   user.first_name = Faker::Name.first_name
   user.last_name = Faker::Name.last_name
-  user.address = address.sample
+  user.address = Faker::Address.full_address
   user.phone = Faker::PhoneNumber.cell_phone
   user.save
 end
@@ -43,16 +42,17 @@ end
   user.password = "123123"
   user.first_name = Faker::Name.first_name
   user.last_name = Faker::Name.last_name
-  user.address = address.sample
+  user.address = "Carrer muntaner #{rand(10..100)}, barcelona"
   user.phone = Faker::PhoneNumber.cell_phone
   user.save
   1.times do
     lesson = Lesson.new
     lesson.user_id = user.id
     lesson.hourly_prices = 100 + rand(20)
-    lesson.coding_language = ["ruby", "css3", "python", "javascript", "html5", "sql"].sample
+    lesson.coding_language = ["Ruby", "css3", "Python", "Javascript", "html5", "Sql"].sample
     # lesson.description = Faker::Lorem.paragraph(sentence_count: 3)
     lesson.description = description.sample
+    lesson.language_image = "#{lesson.coding_language}.png"
     lesson.save
     1.times do
       booking = Booking.new

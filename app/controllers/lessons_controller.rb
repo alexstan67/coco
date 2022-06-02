@@ -7,7 +7,8 @@ class LessonsController < ApplicationController
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude
+        lng: user.longitude,
+        image_url: helpers.asset_url(user.lessons.first.language_image)
       }
     end
   end
