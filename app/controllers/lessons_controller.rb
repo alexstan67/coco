@@ -1,6 +1,10 @@
 class LessonsController < ApplicationController
   def index
-    @lessons = Lesson.all
+    if params[:code_language].present?
+      @lessons = Lesson.where(coding_language: params[:code_language])
+    else
+      @lessons = Lesson.all
+    end
 
     @users = User.where(id: @lessons.pluck(:user_id))
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
@@ -16,5 +20,9 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
     @booking = Booking.new
     @rating_average = 4
+  end
+
+  def get
+    @lessons = lessons.where(lessons.language_image)
   end
 end
