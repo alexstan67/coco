@@ -11,19 +11,27 @@
         <div class="box-container">
           <div class="d-flex">
             <div class="box-left">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", width: 56, height: 56, class: "avatar-large" %>
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", width: 56, height: 56, class: "avatar-large" %>
             </div>
             <div class="box-center">
-              <p>Student: <%= booking.user.first_name %></p>
-              <p><%= booking.lesson.coding_language %></p>
+            <h1>Student Information</h1>
+              <p>Name: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+              <p>Lesson: <%= booking.lesson.coding_language %></p>
+              <p>Email: <%= booking.user.email %></p>
+              <p>Phone: <%= booking.user.phone %></p>
+              <p>Address: <%= booking.user.address %></p>
+              <p>Teaching Price: <%= booking.lesson.hourly_prices %></p>
+              <p>Comment: <%= booking.comment %></p>
+
+
             </div>
           </div>
 
           <div class="box-right">
-            <p><%= booking.teaching_date %></p>
+            <p>Date: <%= booking.teaching_date.strftime("%-d %B %Y") %></p>
             <% if booking.status == "pending" %>
-              <%= link_to "Accept", booking_accept_path(booking)  %>
-              <%= link_to "Reject", booking_reject_path(booking)  %>
+              <%= link_to "Accept", booking_accept_path(booking), class: "btn btn-success" %>
+              <%= link_to "Reject", booking_reject_path(booking), class: "btn btn-danger" %>
               <% elsif booking.status == "accepted" %>
               <p>Accepted</p>
               <% else %>
@@ -34,11 +42,7 @@
       <% end %>
     </div>
 
-    <div class="student-info" style="width: 300px;">
-      <h2>Student Info</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    </div>
+
 
   </div>
  </div>
