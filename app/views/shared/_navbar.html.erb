@@ -2,6 +2,11 @@
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "coco_logo.png", width: 100 %>
+      <span>
+        <% if user_signed_in? %>
+          Hi <%= current_user.first_name %> !
+        <% end %> 
+      </span>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
