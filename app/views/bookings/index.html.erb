@@ -2,7 +2,7 @@
 <div class="container-bookings">
   <div>
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", width: 56, height: 56, class: "avatar-large" %>
-    <h1>  <%= current_user.first_name %> </h1>
+    <h1> Teacher:  <%= current_user.first_name %> </h1>
   </div>
 
   <div class="d-flex justify-content-between">
@@ -14,14 +14,21 @@
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", width: 56, height: 56, class: "avatar-large" %>
             </div>
             <div class="box-center">
-              <p><%= booking.user.first_name %></p>
+              <p>Student: <%= booking.user.first_name %></p>
               <p><%= booking.lesson.coding_language %></p>
             </div>
           </div>
 
           <div class="box-right">
             <p><%= booking.teaching_date %></p>
-            <input class="w3-button w3-black" type="button" value="Accept"> <button class="w3-button w3-black">Reject</button>
+            <% if booking.status == "pending" %>
+              <%= link_to "Accept", booking_accept_path(booking)  %>
+              <%= link_to "Reject", booking_reject_path(booking)  %>
+              <% elsif booking.status == "accepted" %>
+              <p>Accepted</p>
+              <% else %>
+              <p>Rejected</p>
+            <% end %>
           </div>
         </div>
       <% end %>
@@ -36,3 +43,5 @@
   </div>
  </div>
 </div>
+
+<%= console %>

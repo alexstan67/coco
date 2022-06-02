@@ -41,6 +41,7 @@
 }
 .cc-right {
   background-color: #F6FAFF;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -48,17 +49,18 @@
   width: 100%;
 }
 
-.container-bookings {
-
-}
-
+.cc-right #price {
+  font-size: 30px;
+  
 .box-container {
   display: flex;
   justify-content: space-between;
+  background: #D7E4F9;
+  margin-top: 10px;
 }
 
 .bookings-card {
-  background: #D7E4F9;
+  // background: #D7E4F9;
 }
 
 .box
@@ -94,6 +96,8 @@
 
 .student-info {
   background-color: #BCBCBC ;
-  height: 100px;
-  width: 400px;
+  width: 200px;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
 }
