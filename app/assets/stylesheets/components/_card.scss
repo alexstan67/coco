@@ -51,4 +51,51 @@
 
 .cc-right #price {
   font-size: 30px;
+  
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  background: #D7E4F9;
+  margin-top: 10px;
+}
+
+.bookings-card {
+  // background: #D7E4F9;
+}
+
+.box
+{
+  display: flex;
+  padding: 15px;
+  background-color: #D7E4F9;
+  height: 250px;
+  width: 700px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.box-left {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  align-items: center;
+}
+
+.box-center {
+  // float: center;
+}
+
+.box-right {
+  background-color: #D7E4F9;
+  // float: right;
+  flex-direction: column;
+  padding: 15px;
+  align-items: center;
+  // width: 600px;
+}
+
+.student-info {
+  background-color: #BCBCBC ;
+  width: 400px;
+  padding: 20px;
 }

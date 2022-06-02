@@ -19,6 +19,7 @@ User.destroy_all
 
 puts "Creating users, lessons"
 
+normal_users = []
 # Create normal users
 3.times do
   file = File.open(Rails.root.join("app/assets/images/image.png"))
@@ -31,6 +32,7 @@ puts "Creating users, lessons"
   user.address = Faker::Address.full_address
   user.phone = Faker::PhoneNumber.cell_phone
   user.save
+  normal_users << user.id
 end
 
 #Create teachers
@@ -56,7 +58,7 @@ end
     lesson.save
     1.times do
       booking = Booking.new
-      booking.user_id = lesson.user_id
+      booking.user_id = normal_users.sample
       booking.lesson_id = lesson.id
       booking.duration_min = [60, 90, 120].sample
       booking.total_price = lesson.hourly_prices.to_f * booking.duration_min
