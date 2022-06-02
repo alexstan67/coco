@@ -41,9 +41,14 @@
 }
 .cc-right {
   background-color: #F6FAFF;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   padding: 15px;
   align-items: center;
   width: 100%;
+}
+
+.cc-right #price {
+  font-size: 30px;
 }
