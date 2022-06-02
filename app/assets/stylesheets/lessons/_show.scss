@@ -2,19 +2,23 @@
   display: flex;
 }
 .card-container2 {
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   background-color: #D7E4F9;
   margin: 10px;
   color: black;
-  text-align: center !important;
+  text-align: justify;
   padding: 30px;
 }
 .container-up {
-  display:flex;
-  text-align: center;
+  //display:flex;
+  //text-align: center;
 }
 .form-container {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
   background-color: #D7E4F9;
   margin: 10px;
   text-align: center;
@@ -23,6 +27,17 @@
 .container-up-right {
   text-align: center !important;
 }
-.container-main h1 {
-  margin-left: 30px;
+.price {
+  color: white;
+  font-size: 36px;
+  background-color: #92B4EC;
+  width: 300px;
+  text-align: center;
+}
+.coding-lang {
+  font-weight: 900;
+}
+.container-down {
+  display: flex;
+  flex-direction: column;
 }

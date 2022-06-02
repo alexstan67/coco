@@ -5,5 +5,6 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
     @booking = Booking.new
+    @rating_average = 4
   end
 end
