@@ -51,10 +51,10 @@ end
     lesson = Lesson.new
     lesson.user_id = user.id
     lesson.hourly_prices = 100 + rand(20)
-    lesson.coding_language = ["ruby", "css3", "Python", "Javascript", "html5", "Sql"].sample
+    lesson.coding_language = ["ruby", "css3", "python", "javascript", "html5", "sql"].sample
     # lesson.description = Faker::Lorem.paragraph(sentence_count: 3)
     lesson.description = description.sample
-    lesson.language_image = "#{lesson.coding_language}.png"
+    lesson.language_image = "pin_#{lesson.coding_language}.png"
     lesson.save
     1.times do
       booking = Booking.new
