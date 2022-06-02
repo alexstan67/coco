@@ -41,6 +41,7 @@
 }
 .cc-right {
   background-color: #F6FAFF;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -48,10 +49,9 @@
   width: 100%;
 }
 
-.container-bookings {
-
-}
-
+.cc-right #price {
+  font-size: 30px;
+  
 .box-container {
   display: flex;
   justify-content: space-between;
