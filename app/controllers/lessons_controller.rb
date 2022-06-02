@@ -1,7 +1,9 @@
 class LessonsController < ApplicationController
   def index
-    if params[:code_language].present?
-      @lessons = Lesson.where(coding_language: params[:code_language])
+    if params[:code_language].present? && Lesson.where(coding_language: params[:code_language]).count != 0
+        @lessons = Lesson.where(coding_language: params[:code_language])
+    # elsif @lessons.count == 0
+    #       @lessons = Lesson.all
     else
       @lessons = Lesson.all
     end
@@ -16,13 +18,10 @@ class LessonsController < ApplicationController
       }
     end
   end
+
   def show
     @lesson = Lesson.find(params[:id])
     @booking = Booking.new
     @rating_average = 4
-  end
-
-  def get
-    @lessons = lessons.where(lessons.language_image)
   end
 end

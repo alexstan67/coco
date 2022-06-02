@@ -21,35 +21,108 @@ puts "Creating users, lessons"
 
 normal_users = []
 # Create normal users
-3.times do
-  file = File.open(Rails.root.join("app/assets/images/image.png"))
-  user = User.new
-  user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  user.email = Faker::Internet.email
-  user.password = "123123"
-  user.first_name = Faker::Name.first_name
-  user.last_name = Faker::Name.last_name
-  user.address = Faker::Address.full_address
-  user.phone = Faker::PhoneNumber.cell_phone
-  user.save
-  normal_users << user.id
-end
+file = File.open(Rails.root.join("app/assets/images/Alex.jpg"))
+user = User.new
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.email = "alex@coco.com"
+user.password = "123123"
+user.first_name = "Alex"
+user.last_name = "Stanescot"
+user.address = Faker::Address.full_address
+user.phone = Faker::PhoneNumber.cell_phone
+user.save
+normal_users << user.id
 
+file = File.open(Rails.root.join("app/assets/images/Riza.jpg"))
+user = User.new
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.email = "riza@coco.com"
+user.password = "123123"
+user.first_name = "Riza"
+user.last_name = "Santoso"
+user.address = Faker::Address.full_address
+user.phone = Faker::PhoneNumber.cell_phone
+user.save
+normal_users << user.id
+
+file = File.open(Rails.root.join("app/assets/images/person_1.jpg"))
+user = User.new
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.email = "glen@coco.com"
+user.password = "123123"
+user.first_name = "Glen"
+user.last_name = "Smith"
+user.address = Faker::Address.full_address
+user.phone = Faker::PhoneNumber.cell_phone
+user.save
+normal_users << user.id
+
+teachers = []
 #Create teachers
-5.times do
-  file = File.open(Rails.root.join("app/assets/images/image.png"))
-  user = User.new
-  user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  user.email = Faker::Internet.email
-  user.password = "123123"
-  user.first_name = Faker::Name.first_name
-  user.last_name = Faker::Name.last_name
-  user.address = "Carrer muntaner #{rand(10..100)}, barcelona"
-  user.phone = Faker::PhoneNumber.cell_phone
-  user.save
+file = File.open(Rails.root.join("app/assets/images/person_2.jpg"))
+user = User.new
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.email = "christina@coco.com"
+user.password = "123123"
+user.first_name = "Christina"
+user.last_name = "Sugiono"
+user.address = "Carrer muntaner #{rand(10..100)}, barcelona"
+user.phone = Faker::PhoneNumber.cell_phone
+user.save
+teachers << user.id
+
+file = File.open(Rails.root.join("app/assets/images/image.png"))
+user = User.new
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.email = Faker::Internet.email
+user.password = "123123"
+user.first_name = Faker::Name.first_name
+user.last_name = Faker::Name.last_name
+user.address = "Carrer muntaner #{rand(10..100)}, barcelona"
+user.phone = Faker::PhoneNumber.cell_phone
+user.save
+teachers << user.id
+
+file = File.open(Rails.root.join("app/assets/images/image.png"))
+user = User.new
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.email = Faker::Internet.email
+user.password = "123123"
+user.first_name = Faker::Name.first_name
+user.last_name = Faker::Name.last_name
+user.address = "Carrer muntaner #{rand(10..100)}, barcelona"
+user.phone = Faker::PhoneNumber.cell_phone
+user.save
+teachers << user.id
+
+file = File.open(Rails.root.join("app/assets/images/image.png"))
+user = User.new
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.email = Faker::Internet.email
+user.password = "123123"
+user.first_name = Faker::Name.first_name
+user.last_name = Faker::Name.last_name
+user.address = "Carrer muntaner #{rand(10..100)}, barcelona"
+user.phone = Faker::PhoneNumber.cell_phone
+user.save
+teachers << user.id
+
+file = File.open(Rails.root.join("app/assets/images/image.png"))
+user = User.new
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.email = Faker::Internet.email
+user.password = "123123"
+user.first_name = Faker::Name.first_name
+user.last_name = Faker::Name.last_name
+user.address = "Carrer muntaner #{rand(10..100)}, barcelona"
+user.phone = Faker::PhoneNumber.cell_phone
+user.save
+teachers << user.id
+
+teachers.each do |teacher|
   1.times do
     lesson = Lesson.new
-    lesson.user_id = user.id
+    lesson.user_id = teacher
     lesson.hourly_prices = 100 + rand(20)
     lesson.coding_language = ["ruby", "css3", "python", "javascript", "html5", "sql"].sample
     # lesson.description = Faker::Lorem.paragraph(sentence_count: 3)
