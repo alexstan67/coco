@@ -34,6 +34,7 @@ class BookingsController < ApplicationController
     @booking.lesson_id = params[:lesson_id]
     @booking.total_price = (@booking.duration_min.to_f / 60) * @booking.lesson.hourly_prices
     @lesson = Lesson.find(params[:lesson_id])
+    @rating_average = 4
     if @booking.save
       flash[:alert] = "Booking created, waiting for teacher validation!"
       redirect_to root_path
