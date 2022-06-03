@@ -1,8 +1,4 @@
 class BookingsController < ApplicationController
-  def create
-    Booking.create(booking_params)
-  end
-
   def index
     # return a collection with all bookings
     # booking -> lesson -> user
@@ -39,8 +35,8 @@ class BookingsController < ApplicationController
     @booking.total_price = (@booking.duration_min.to_f / 60) * @booking.lesson.hourly_prices
     @lesson = Lesson.find(params[:lesson_id])
     if @booking.save
-      flash[:alert] = "Booking created!"
-      redirect_to bookings_path
+      flash[:alert] = "Booking created, waiting for teacher validation!"
+      redirect_to root_path
     else
       flash[:alert] = "Booking error, please try again!"
       render "lessons/show"
