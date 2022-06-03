@@ -49,12 +49,14 @@
     <h1>Reviews</h1>
     <p>No reviews yet!</p>
   </div>
-  <div class="form-container" data-controller="total_price">
+  <div class="form-container" data-controller="total-price">
       <%= simple_form_for [ @lesson, @booking ] do |f| %>
       <%= f.input :teaching_date, as: :date, html5: true %>
       <%= f.input :comment, as: :text %>
-      <%= f.input :duration_min, as: :radio_buttons, collection: [['60', '60 min'], ['90', '90 min'], ['120', '120 min']], label_method: :second, value_method: :first, :checked => ['60', '60 min'] %>
-      <p>Total price: <%= @lesson.hourly_prices %>€</p>
+      <%= f.input :duration_min, as: :radio_buttons, collection: [['60', '60 min'], ['90', '90 min'], ['120', '120 min']], label_method: :second, value_method: :first, :checked => ['60', '60 min'], input_html: { data: { action: 'click->total-price#calculate' }}  %>
+      <p class="d-none" data-total-price-target="hourlyPrice"><%= @lesson.hourly_prices %></p>
+      <p data-total-price-target="totalPrice">Total price: <%= @lesson.hourly_prices %>€</p>
+      <% @booking.total_price = @lesson.hourly_prices * (@booking.duration_min.to_f / 60) %>
       <%= f.submit "Book", class: "btn btn-primary" %>
   <% end %>
   </div>
