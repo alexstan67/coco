@@ -1,13 +1,14 @@
 .main-container {
   display: flex;
   flex-direction: row;
-  padding-top: 15px;
+  padding-top: 0px;
 }
 
 .second-container {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  margin-top: 25px;
 }
 
 .third-container {
@@ -40,6 +41,7 @@
   align-items: center;
 }
 .cc-right {
+  position: relative;
   background-color: #F6FAFF;
   border-radius: 5px;
   display: flex;
@@ -50,7 +52,15 @@
 }
 
 .cc-right #price {
-  font-size: 30px;
+  position: absolute;
+  bottom: -4px;
+  right: 32px;
+  color: white;
+  border-radius: 5px;
+  font-size: 23px;
+  background-color: #92B4EC;
+  width: 228px;
+  text-align: center;
 }
 
 .box-container {
@@ -88,6 +98,7 @@
   border-radius: inherit;
 }
 
+<<<<<<< HEAD
 .box-center {
   display: flex;
   flex-grow: 1;
@@ -95,6 +106,8 @@
   background-color: #f6faff;
 }
 
+=======
+>>>>>>> 56ada6958b6adcc10c1f1ea1a68c0de898dc297b
 .box-right {
   background-color: #f6faff;
   // float: right;
