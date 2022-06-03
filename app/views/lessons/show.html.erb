@@ -2,7 +2,7 @@
   <div class="card-container2">
     <div class="container-up">
       <div class="container-up-left">
-            <%= cl_image_tag(@lesson.user.photo.key, height: 65, crop: :fill, class: "avatar-large") %>
+            <%= cl_image_tag(@lesson.user.photo.key, height: 65, width: 65, crop: :fill, class: "avatar-large") %>
       </div>
       <div class="container-up-right">
         <h1><%= @lesson.user.first_name %></h1>
@@ -32,6 +32,15 @@
     <div class="container-down">
       <div class="description">
         <p><b><%= @lesson.user.first_name %></b> <%= @lesson.description %></p>
+      </div>
+      <div class="adresse-container">
+        <div class="adresse-container-left">
+          <%= image_tag "pin_ruby.png", alt: "Ruby pin" %>
+        </div>
+         <div class="adresse-container-right">
+          <b>location:</b>
+          <%= @lesson.user.address %>
+        </div>
       </div>
       <p class="price"><b><%= @lesson.hourly_prices %> €/h</b></p>
     </div>
