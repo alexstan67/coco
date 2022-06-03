@@ -2,7 +2,7 @@
 <div class="container-bookings">
 <% if user_signed_in? %>
   <div>
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", width: 56, height: 56, class: "avatar-large" %>
+    <%= cl_image_tag current_user.photo.key, width: 56, height: 56, class: "avatar-large" %>
     <h1> <%= current_user.first_name %> </h1>
   </div>
 
@@ -10,9 +10,8 @@
     <div class="bookings-card flex-grow-1">
       <% @bookings.each do |booking| %>
         <div class="box-container">
-
             <div class="box-left">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", width: 56, height: 56, class: "avatar-large" %>
+              <%= cl_image_tag booking.user.photo.key, width: 56, height: 56, class: "avatar-large" %>
             </div>
             <div class="box-center">
               <h1>Student Information</h1>
@@ -23,8 +22,6 @@
                 <p>Address: <%= booking.user.address %></p>
                 <p>Teaching Price: <%= booking.total_price %>€</p>
                 <p>Comment: <%= booking.comment %></p>
-
-
             </div>
 
 
