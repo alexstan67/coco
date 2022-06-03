@@ -1,8 +1,4 @@
 class BookingsController < ApplicationController
-  def create
-    Booking.create(booking_params)
-  end
-
   def index
     # return a collection with all bookings
     # booking -> lesson -> user
@@ -40,8 +36,8 @@ class BookingsController < ApplicationController
     @lesson = Lesson.find(params[:lesson_id])
     @rating_average = 4
     if @booking.save
-      flash[:alert] = "Booking created!"
-      redirect_to bookings_path
+      flash[:alert] = "Booking created, waiting for teacher validation!"
+      redirect_to root_path
     else
       flash[:alert] = "Booking error, please try again!"
       render "lessons/show"
@@ -51,6 +47,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:total_price, :duration_min, :teaching_date, :user_id, :lesson_id, :comment)
+    params.require(:booking).permit(:total_price, :duration_min, :teaching_date, :user_id, :lesson_id, :comment, :total_price)
   end
 end
