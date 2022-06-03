@@ -71,7 +71,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 teachers << user.id
 
-file = File.open(Rails.root.join("app/assets/images/image.png"))
+file = File.open(Rails.root.join("app/assets/images/person_3.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user.email = Faker::Internet.email
@@ -83,7 +83,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 teachers << user.id
 
-file = File.open(Rails.root.join("app/assets/images/image.png"))
+file = File.open(Rails.root.join("app/assets/images/person_4.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user.email = Faker::Internet.email
@@ -95,7 +95,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 teachers << user.id
 
-file = File.open(Rails.root.join("app/assets/images/image.png"))
+file = File.open(Rails.root.join("app/assets/images/person_5.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user.email = Faker::Internet.email
@@ -107,7 +107,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 teachers << user.id
 
-file = File.open(Rails.root.join("app/assets/images/image.png"))
+file = File.open(Rails.root.join("app/assets/images/person_6.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user.email = Faker::Internet.email
