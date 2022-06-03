@@ -14,6 +14,7 @@ class LessonsController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user }),
         image_url: helpers.asset_url(user.lessons.first.language_image)
       }
     end
