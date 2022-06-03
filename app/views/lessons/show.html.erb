@@ -57,6 +57,7 @@
       <p class="d-none" data-total-price-target="hourlyPrice"><%= @lesson.hourly_prices %></p>
       <p data-total-price-target="totalPrice">Total price: <%= @lesson.hourly_prices %>€</p>
       <% @booking.total_price = @lesson.hourly_prices * (@booking.duration_min.to_f / 60) %>
+       <%= f.input :total_price, as: :hidden, input_html: { value: @booking.total_price } %>
       <%= f.submit "Book", class: "btn btn-primary" %>
   <% end %>
   </div>

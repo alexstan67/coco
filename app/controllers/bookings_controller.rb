@@ -37,7 +37,6 @@ class BookingsController < ApplicationController
     @booking.lesson_id = params[:lesson_id]
     @booking.total_price = (@booking.duration_min.to_f / 60) * @booking.lesson.hourly_prices
     @lesson = Lesson.find(params[:lesson_id])
-    @rating_average = 4
     if @booking.save
       flash[:alert] = "Booking created!"
       redirect_to bookings_path
@@ -50,6 +49,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:total_price, :duration_min, :teaching_date, :user_id, :lesson_id, :comment)
+    params.require(:booking).permit(:total_price, :duration_min, :teaching_date, :user_id, :lesson_id, :comment, :total_price)
   end
 end
