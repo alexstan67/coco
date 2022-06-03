@@ -65,10 +65,15 @@
 
 .box-container {
   display: flex;
+  padding: 15px;
+  margin-bottom: 20px;
   justify-content: space-between;
   background: #D7E4F9;
   margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
+
 
 .bookings-card {
   // background: #D7E4F9;
@@ -89,14 +94,24 @@
   flex-direction: column;
   padding: 15px;
   align-items: center;
+  background-color: #f6faff;
+  border-radius: inherit;
+}
+
+.box-center {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  background-color: #f6faff;
 }
 
 .box-right {
-  background-color: #BCBCBC;
+  background-color: #f6faff;
   // float: right;
   flex-direction: column;
   padding: 15px;
   align-items: center;
+  border-radius: inherit;
   // width: 600px;
 }
 
