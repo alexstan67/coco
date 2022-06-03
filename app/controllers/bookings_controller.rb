@@ -5,8 +5,9 @@ class BookingsController < ApplicationController
 
   def index
     # return a collection with all bookings
-    @bookings = current_user.teacher_bookings
-    @student_bookings = current_user.bookings
+    # booking -> lesson -> user
+    @bookings = Booking.joins(:lesson).where(lesson: { user: current_user })
+    @student_bookings = Booking.where(user: current_user)
   end
 
   def accept
