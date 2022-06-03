@@ -45,8 +45,11 @@
       <p class="price"><b><%= @lesson.hourly_prices %> €/h</b></p>
     </div>
   </div>
-  <div class="form-container">
-    <!-- app/views/reviews/new.html.erb -->
+  <div class="form-reviews">
+    <h1>Reviews</h1>
+    <p>No reviews yet!</p>
+  </div>
+  <div class="form-container" data-controller="total_price">
       <%= simple_form_for [ @lesson, @booking ] do |f| %>
       <%= f.input :teaching_date, as: :date, html5: true %>
       <%= f.input :comment, as: :text %>

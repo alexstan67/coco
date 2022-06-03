@@ -66,3 +66,18 @@
 .adresse-container-right {
   padding: 15px;
 }
+.form-reviews {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D7E4F9;
+  margin: 10px;
+  color: black;
+  text-align: justify;
+  padding: 30px;
+  min-width: 400px;
+}
+.form-reviews h1{
+  color: #92B4EC;
+}
