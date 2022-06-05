@@ -1,5 +1,8 @@
 <div>
   <%= cl_image_tag user.photo.key, width: 56, height: 56, class: "avatar-large" %>
   <h2><%= user.first_name %></h2>
+  <% lesson = Lesson.find_by(user_id: user.id) %>
+  <%= image_tag "#{lesson.coding_language}.png", width: 40 %>
   <p><%= user.address %></p>
+  <p><%= "#{lesson.hourly_prices} €/h" %></p>
 </div>
