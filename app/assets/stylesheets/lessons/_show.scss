@@ -14,8 +14,12 @@
   padding: 30px;
 }
 .container-up {
-  //display:flex;
-  //text-align: center;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px #f4f4f4 solid;
+  padding: 15px;
+  border-radius: 5px;
 }
 .form-container {
   border-radius: 5px;
@@ -28,6 +32,11 @@
 }
 .container-up-right {
   text-align: center !important;
+}
+.container-up-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .price {
   color: white;
@@ -51,7 +60,6 @@
 .description {
   width: 600px;
 }
-
 .adresse-container {
   display: flex;
   margin: 15px;

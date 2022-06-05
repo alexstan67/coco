@@ -57,8 +57,8 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 normal_users << user.id
 
-teachers = []
 #Create teachers
+teachers = []
 file = File.open(Rails.root.join("app/assets/images/person_2.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -134,7 +134,7 @@ teachers.each do |teacher|
       booking.user_id = normal_users.sample
       booking.lesson_id = lesson.id
       booking.duration_min = [60, 90, 120].sample
-      booking.total_price = lesson.hourly_prices.to_f * booking.duration_min
+      booking.total_price = lesson.hourly_prices.to_f * (booking.duration_min / 60)
       booking.teaching_date = Date.today()
       booking.comment = Faker::Lorem.paragraph(sentence_count: 3)
       booking.save
