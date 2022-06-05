@@ -2,7 +2,7 @@
   <div class="card-container2">
     <div class="container-up">
       <div class="container-up-left">
-            <%= cl_image_tag(@lesson.user.photo.key, height: 65, width: 65, crop: :fill, class: "avatar-large") %>
+            <%= cl_image_tag(@lesson.user.photo.key, crop: :fill, class: "avatar-extra-large") %>
       </div>
       <div class="container-up-right">
         <h1><%= @lesson.user.first_name %></h1>
@@ -45,10 +45,6 @@
       <p class="price"><b><%= @lesson.hourly_prices %> €/h</b></p>
     </div>
   </div>
-  <div class="form-reviews">
-    <h1>Reviews</h1>
-    <p>No reviews yet!</p>
-  </div>
   <div class="form-container" data-controller="total-price">
       <%= simple_form_for [ @lesson, @booking ] do |f| %>
       <%= f.input :teaching_date, as: :date, html5: true %>
@@ -60,5 +56,9 @@
        <%= f.input :total_price, as: :hidden, input_html: { value: @booking.total_price } %>
       <%= f.submit "Book", class: "btn btn-primary" %>
   <% end %>
+  </div>
+  <div class="form-reviews">
+    <h1>Reviews</h1>
+    <p>No reviews yet!</p>
   </div>
 </div>

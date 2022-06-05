@@ -17,10 +17,9 @@ Booking.destroy_all
 Lesson.destroy_all
 User.destroy_all
 
-puts "Creating users, lessons"
-
-normal_users = []
 # Create normal users
+normal_users = []
+puts "Creating user 1"
 file = File.open(Rails.root.join("app/assets/images/Alex.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -33,6 +32,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 normal_users << user.id
 
+puts "Creating user 2..."
 file = File.open(Rails.root.join("app/assets/images/Riza.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -45,6 +45,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 normal_users << user.id
 
+puts "Creating user 3..."
 file = File.open(Rails.root.join("app/assets/images/person_1.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -57,8 +58,9 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 normal_users << user.id
 
-teachers = []
 #Create teachers
+teachers = []
+puts "Creating teacher 1..."
 file = File.open(Rails.root.join("app/assets/images/person_2.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -71,6 +73,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 teachers << user.id
 
+puts "Creating teacher 2..."
 file = File.open(Rails.root.join("app/assets/images/person_3.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -83,6 +86,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 teachers << user.id
 
+puts "Creating teacher 3..."
 file = File.open(Rails.root.join("app/assets/images/person_4.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -95,6 +99,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 teachers << user.id
 
+puts "Creating teacher 3..."
 file = File.open(Rails.root.join("app/assets/images/person_5.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -107,6 +112,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 teachers << user.id
 
+puts "Creating teacher 4..."
 file = File.open(Rails.root.join("app/assets/images/person_6.jpg"))
 user = User.new
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -119,6 +125,7 @@ user.phone = Faker::PhoneNumber.cell_phone
 user.save
 teachers << user.id
 
+puts "Creating lessons and bookings..."
 teachers.each do |teacher|
   1.times do
     lesson = Lesson.new
@@ -127,14 +134,14 @@ teachers.each do |teacher|
     lesson.coding_language = ["ruby", "css3", "python", "javascript", "html5", "sql"].sample
     # lesson.description = Faker::Lorem.paragraph(sentence_count: 3)
     lesson.description = description.sample
-    lesson.language_image = "pin_#{lesson.coding_language}.png"
+    lesson.language_image = "#{lesson.coding_language}.png"
     lesson.save
     1.times do
       booking = Booking.new
       booking.user_id = normal_users.sample
       booking.lesson_id = lesson.id
       booking.duration_min = [60, 90, 120].sample
-      booking.total_price = lesson.hourly_prices.to_f * booking.duration_min
+      booking.total_price = lesson.hourly_prices.to_f * (booking.duration_min / 60)
       booking.teaching_date = Date.today()
       booking.comment = Faker::Lorem.paragraph(sentence_count: 3)
       booking.save
