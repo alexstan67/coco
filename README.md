@@ -1,11 +1,12 @@
 # Introduction
 
-![Image](file://app/asset/images/coco_logo.png)
-Rails app generated with during the Le Wagon Bootcamp in Bali 2022, while making a Airbnb like application. Team was Riza Santoso, Glen Smith and Alexandre Stanescot (lead).
+<img src="https://github.com/alexstan67/coco/blob/master/app/assets/images/coco_logo.png" width="150" />
 
-# CoCo - Coding Teacher
+Rails app generated with during the Le Wagon Bootcamp in Bali 2022, while making a Airbnb like application. Team was Riza Santoso, Christina Sugiono, Glen Smith and Alexandre Stanescot (lead).
 
-CoCo is a web application that let you find and book a Coding Teacher in your neighborhood. You cannect either as a student, or as a teacher.
+# CoCo - Coding Coach
+
+CoCo is a web application that let you find and book a Coding Coach in your neighborhood. You cannect either as a student, or as a teacher.
 * Students: can see the teachers around them, and filter with the coding language they are interested in
 * Teachers: can propose sessions with a defined rate, and coding language. They can also via a dashboard accpet or reject student bookings.
 
@@ -13,7 +14,10 @@ CoCo is a web application that let you find and book a Coding Teacher in your ne
 ## Installation
 
 `bundle install`
+
 `yarn`
+
+`rails db:seed` for demo purpose.
 
 ## Usage
 
