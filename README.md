@@ -1,6 +1,6 @@
 # Introduction
 
-![Image](file://app/asset/images/coco_logo.png)
+![Image](https://github.com/alexstan67/coco/blob/master/app/assets/images/coco_logo.png)
 Rails app generated with during the Le Wagon Bootcamp in Bali 2022, while making a Airbnb like application. Team was Riza Santoso, Glen Smith and Alexandre Stanescot (lead).
 
 # CoCo - Coding Teacher
